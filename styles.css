@@ -1,0 +1,500 @@
+/* ===============================
+   Base Reset + Fonts
+   =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #f9fafb 0%, #e8f5e8 100%);
+    color: #222;
+    line-height: 1.7;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* ===============================
+   Header & Navigation
+   =============================== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0b6623, #228b22);
+  padding: 20px 25px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.header-left h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    background: #0b6623;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+
+  nav.show {
+    display: block;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 12px 0;
+  }
+}
+
+@keyframes slideDown {
+  0% {opacity: 0; transform: translateY(-10px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+
+/* ===============================
+   Main Content
+   =============================== */
+main {
+    max-width: 1250px;
+    margin: 45px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 40px;
+}
+
+/* ===============================
+   Section Titles
+   =============================== */
+h2 {
+    font-size: 28px;
+    color: #0b6623;
+    margin-bottom: 18px;
+    position: relative;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2::after {
+    content: "";
+    height: 4px;
+    width: 65px;
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -8px;
+    border-radius: 2px;
+}
+
+/* ===============================
+   Destination Section (Modern Cards)
+   =============================== */
+.destination {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.destination:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+
+.destination img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination:hover img {
+    transform: scale(1.05);
+}
+
+.destination iframe {
+    margin-top: 15px;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
+}
+
+/* ===============================
+   Province / Culture Section
+   =============================== */
+.province {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    margin-bottom: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.province:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.province h3 {
+    font-size: 24px;
+    color: #0b6623;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+/* Image + Text layout for province */
+.province-content {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.province-content img {
+    width: 320px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.province-content img:hover {
+    transform: scale(1.02);
+}
+
+.province-text h4 {
+    color: #228b22;
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.province-text p {
+    color: #444;
+    font-size: 16px;
+}
+
+/* ===============================
+   Travel Tips (Gradient Box)
+   =============================== */
+section ul {
+    list-style: none;
+    background: linear-gradient(135deg, #0b6623, #2e8b57);
+    color: #fff;
+    padding: 28px 35px;
+    border-radius: 14px;
+    max-width: 900px;
+    margin: 15px auto 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+section ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 14px;
+    z-index: -1;
+}
+
+section ul li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    padding-left: 22px;
+    position: relative;
+    font-weight: 500;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+section ul li:nth-child(1) { animation-delay: 0.1s; }
+section ul li:nth-child(2) { animation-delay: 0.2s; }
+section ul li:nth-child(3) { animation-delay: 0.3s; }
+/* Add more delays as needed */
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+section ul li::before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-size: 18px;
+}
+
+/* ===============================
+   Image Gallery
+   =============================== */
+.gallery-item {
+    background: #fff;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+}
+
+/* ===============================
+   Form Section (Modern)
+   =============================== */
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin-bottom: 35px;
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.container h2 {
+    text-align: center;
+    color: #0b6623;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.name,
+.location,
+.story {
+    margin-top: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border 0.3s, box-shadow 0.3s;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #228b22;
+    box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px;
+    background: linear-gradient(135deg, #228b22, #0b6623);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+form button:hover::before {
+    left: 100%;
+}
+
+form button:hover {
+    background: #185c18;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===============================
+   Map Section
+   =============================== */
+#map iframe {
+    width: 100%;
+    height: 460px;
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.13);
+    margin-top: 15px;
+    border: none;
+}
+
+/* ===============================
+   Footer (Clean Modern)
+   =============================== */
+footer {
+    background: linear-gradient(135deg, #0b6623, #228b22);
+    color: #fff;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 50px;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+}
+
+/* ===============================
+   Mobile Responsive
+   =============================== */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .province-content {
+        flex-direction: column;
+    }
+
+    .province-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .destination img,
+    .gallery-item img {
+        height: 240px;
+    }
+
+    section ul {
+        padding: 20px 25px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    .province h3 {
+        font-size: 20px;
+    }
+
+    .province-text h4 {
+        font-size: 18px;
+    }
+
+    #map iframe {
+        height: 300px;
+    }
+}
